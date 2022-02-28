@@ -1,7 +1,5 @@
 ## Shorts Client 2022
 
-## Available Scripts
-
 In the project directory, you can run:
 
 ### `npm start`
