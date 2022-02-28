@@ -1,0 +1,134 @@
+/* General Card Layout */
+.break {
+  flex-basis: 100%;
+  height: 0rem;
+}
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box-layout {
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+.box {
+		display: flex;
+		flex-direction: column;
+    justify-content: top;
+	}
+	
+.box-stretch {
+		flex: 1;
+}
+	
+.box-bottom {
+
+}
+/* /General Card Layout */
+
+/* Card */
+:root {
+  --time: .7s;
+}
+
+.cards {
+  display: grid;
+}
+
+.card {
+  -webkit-perspective: 40rem;
+          perspective: 40rem;
+          border: none!important;
+          background-color: transparent!important;
+}
+
+.card-body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: var(--time) transform;
+  transition: var(--time) transform;
+}
+.card:hover .card-body, .card:focus .card-body {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+}
+
+.card-front, .card-back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  min-width: 100%;
+ 
+
+}
+
+.card-back {
+  -webkit-transform: rotateX(-180deg) translate(-100%, 0);
+          transform: rotateX(-180deg) translate(-100%, 0);
+          border-radius: 2rem!important;
+          overflow: hidden;
+}
+.card-front {
+          border-radius: 2rem!important;
+}
+
+/* Make it Pretty */
+body {
+  line-height: 1.3;
+  font-family: sans-serif;
+}
+
+.cards {
+  grid-gap: 0rem;
+  grid-auto-rows: 1fr;
+  border: none;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.card {
+  display: -webkit-box;
+  display: flex;
+  -webkit-transition: z-index, -webkit-transform calc(var(--time) / 4);
+  transition: z-index, -webkit-transform calc(var(--time) / 4);
+  transition: z-index, transform calc(var(--time) / 4);
+  transition: z-index, transform calc(var(--time) / 4), -webkit-transform calc(var(--time) / 4);
+  -webkit-transition-delay: var(--time), 0s;
+          transition-delay: var(--time), 0s;
+  text-decoration: none;
+  color: inherit;
+  z-index: 0;
+}
+.card:hover {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  z-index: 1;
+}
+.card:active {
+  -webkit-transform: scale(0.975);
+          transform: scale(0.975);
+}
+
+.card-body {
+  border-radius: 0.25rem;
+  -webkit-box-flex: 1;
+          flex: 1;
+}
+
+.card-front, .card-back {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+}
+
+.shadow, .card-front, .card-back {
+  box-shadow:  0 0px 8px rgba(0, 0, 0, 0.05);
+}
+/* /Card */
