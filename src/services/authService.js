@@ -1,11 +1,11 @@
-import api from './services/api';
+import api from './api';
 import config from '../config.json';
 import jwtDecode from 'jwt-decode';
 
 api.setToken(getToken());
 
 async function login(data) {
-    const { data: token } = await api.post(config.apiRootURL + '/api/auth', data);
+    const { data: token } = await api.post(config.apiRootURL + 'api/auth', data);
     localStorage.setItem('token', token);
 }
 //Saves token to localStorage

@@ -9,7 +9,7 @@ axios.interceptors.response.use(null, error => {
     console.log(expectedError)
     if (!expectedError) {
         console.log('interceptors:' + error);
-        toast(`${error.response.statusText}: ${error.response.data}`);
+        toast('Unexpected Error');
     } else {
         console.log('expected error:' + error);
         toast(`${error.response.statusText}: ${error.response.data}`);
@@ -22,9 +22,9 @@ function setToken(token) {
 }
 
 export default {
-    get: axios.get(),
-    post: axios.post(),
-    put: axios.put(),
-    delete: axios.delete(),
+    get: axios.get,
+    post: axios.post,
+    put: axios.put,
+    delete: axios.delete,
     setToken
 }
