@@ -1,21 +1,21 @@
-import api from './services/api';
+import api from './api';
 import config from '../config.json';
 import FormData from 'form-data';
 
 export default {
     get() {
-        return api.get(config.apiRootURL + '/api/users/me');
+        return api.get(config.apiRootURL + 'api/users/me');
     },
     post(data) {
         const formData = prepareFormData(data);
-        return api.post(config.apiRootURL + '/api/users', formData, formConfig);
+        return api.post(config.apiRootURL + 'api/users', formData, formConfig);
     },
     put(data) {
         const formData = prepareFormData(data);
-        return api.put(config.apiRootURL + '/api/users', formData, formConfig);
+        return api.put(config.apiRootURL + 'api/users', formData, formConfig);
     },
     delete() {
-        return api.delete(config.apiRootURL + '/api/users/me');
+        return api.delete(config.apiRootURL + 'api/users/me');
     }
 }
 const formConfig = {
